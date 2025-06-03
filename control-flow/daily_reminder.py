@@ -1,20 +1,19 @@
 #!/usr/bin/env python3
-task = input("Task: ")
-priority = input("Priority: ").lower()
-time_bound = input("Time Bound: ").lower()
+task = input("Enter your task: ")
+priority = input("Priority (high/medium/low): ").lower()
+time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-reminder = f"Reminder: Your task '{task}' with {priority} priority"
 match priority:
     case "high":
-        reminder += " requires urgent attention"
+        base_message = f"Reminder: '{task}' is a high priority task"
     case "medium":
-        reminder += " should be completed today"
+        base_message = f"Reminder: '{task}' is a medium priority task"
     case "low":
-        reminder += " can be done later"
+        base_message = f"Note: '{task}' is a low priority task"
     case _:
-        reminder += " has an unrecognized priority"
+        base_message = f"Note: '{task}' has an unrecognized priority"
 
 if time_bound == "yes":
-    reminder += " and immediate action is required"
-
-print(reminder + ".")
+    print(base_message + " that requires immediate attention today!")
+else:
+    print(base_message + ". Consider completing it when you have free time.")
