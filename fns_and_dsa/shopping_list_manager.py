@@ -20,9 +20,6 @@ def main():
             except ValueError:
                 print("Invalid input. Please enter a number.")
 
-
-
-
         # Process the choice
         if choice == 1:
             item = input("Enter item to add: ").strip()
@@ -48,3 +45,6 @@ def main():
         elif choice == 4:
             print("Goodbye!")
             break
+
+if __name__ == "__main__":
+    main()
